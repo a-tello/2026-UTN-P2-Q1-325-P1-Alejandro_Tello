@@ -41,6 +41,10 @@ public class SistemaGestionTransporteTuristico {
                     empTurismo.buscarPorPatente(patente);
                     break;
                 case 5:
+                    System.out.print("\n\nIngrese capacidad minima de los vehiculos: ");
+                    validarEntero();
+                    int capacidad = scanner.nextInt();
+                    empTurismo.mostrarVehiculosConCapacidad(capacidad);
                     break;
                 case 6:
                     break;
@@ -73,7 +77,7 @@ public class SistemaGestionTransporteTuristico {
     public static void validarEntero() {
         
         while (!scanner.hasNextInt()) {
-            System.out.println("Error. Debe seleccionar un número de opcion");
+            System.out.println("Error. Debe seleccionar un número valido");
             System.out.print("Reingrese: ");
             scanner.next();
         }

@@ -47,15 +47,39 @@ public class EmpresaTurismo {
          System.out.println("==========================================================\n");
     }
     public void buscarPorPatente(String patente) {
+        if (vehiculos.isEmpty()){
+            System.out.println("No hay vehiculos registrados");
+            return;
+        }
+        
         for (Vehiculo v : vehiculos) {
             if (v.getPatente().equals(patente)){
-                System.out.println("\n\nVEHICULO ENCONTRADO");
+                System.out.println("\n\nVEHICULO ENCONTRADO CON PATENTE " + patente);
                 v.mostrarInformacion();
                 System.out.println();
                 return;
             }
         }
         System.out.println("No existe ningun vehiculo registrado con esa patente\n\n");
+    }
+    
+    public void mostrarVehiculosConCapacidad(int capacidad) {
+        if (vehiculos.isEmpty()){
+            System.out.println("No hay vehiculos registrados");
+            return;
+        }
+        int encontrados = 0;
+        for (Vehiculo v : vehiculos) {
+            if (v.getCapacidadPasajeros() > capacidad) {
+                    v.mostrarInformacion();
+                    encontrados++;
+            }
+        }
+        System.out.println();        
+        if (encontrados == 0) {
+            System.out.println("No se encontraron vehiculos con capacidad para mas de " + capacidad + " personas\n\n");
+        }
+        
     }
             
 }
