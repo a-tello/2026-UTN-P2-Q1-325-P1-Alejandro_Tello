@@ -34,6 +34,7 @@ public class SistemaGestionTransporteTuristico {
                     empTurismo.mostrarVehiculos();
                     break;
                 case 3:
+                    empTurismo.iniciarServicioTuristico();
                     break;
                 case 4:
                     break;

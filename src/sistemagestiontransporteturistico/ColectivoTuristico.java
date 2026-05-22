@@ -1,6 +1,6 @@
 package sistemagestiontransporteturistico;
 
-public class ColectivoTuristico extends Vehiculo{
+public class ColectivoTuristico extends Vehiculo implements ServicioTuristico{
     private int cantidadPisos;
 
     public ColectivoTuristico(String patente, String marca, int capacidadPasajeros, int anioFabricacion, int cantidadPisos) {
@@ -15,5 +15,11 @@ public class ColectivoTuristico extends Vehiculo{
         System.out.print("\t\tCantidad de pisos: " + cantidadPisos);
         System.out.println("\n====================================================");
     }
+
+    @Override
+    public void realizarServicio() {
+        System.out.println("El colectivo de patente " + getPatente() + " ha comenzado el servicio");
+    }
+    
     
 }

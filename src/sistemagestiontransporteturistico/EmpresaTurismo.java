@@ -34,6 +34,18 @@ public class EmpresaTurismo {
         }
         
     }
+    
+    public void iniciarServicioTuristico() {
+         for (Vehiculo v : vehiculos) {
+             if (v instanceof ServicioTuristico) {
+                 ((ServicioTuristico) v).realizarServicio();
+             } else {
+                 System.out.println("La van de patente " + v.getPatente() + " no realiza serivicios turisticos");
+             }
+            
+        }
+         System.out.println("==========================================================\n");
+    }
 //    public Vehiculo buscarPorPatente(String patente) {
 //        for (Vehiculo v : vehiculos) {
 //            if (v.getPatente().equals(patente)){

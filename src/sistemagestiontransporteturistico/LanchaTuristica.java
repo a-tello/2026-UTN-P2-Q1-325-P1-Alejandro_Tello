@@ -1,6 +1,6 @@
 package sistemagestiontransporteturistico;
 
-public class LanchaTuristica extends Vehiculo{
+public class LanchaTuristica extends Vehiculo implements ServicioTuristico{
     private TipoMotor tipoMotor;
 
     public LanchaTuristica(String patente, String marca, int capacidadPasajeros, int anioFabricacion, TipoMotor tipoMotor) {
@@ -16,5 +16,8 @@ public class LanchaTuristica extends Vehiculo{
         System.out.println("\n====================================================");
     }
     
-    
+    @Override
+    public void realizarServicio() {
+        System.out.println("La lancha de patente " + getPatente() + " ha comenzado el servicio");
+    }
 }
