@@ -13,7 +13,7 @@ public class EmpresaTurismo {
                 
         for (Vehiculo v : vehiculos) {
             if (v.getPatente().equals(vehiculo.getPatente())){
-                System.out.println("Error. Ya existe un vehiculo con esa patente");
+                System.out.println("Error. Ya existe un vehiculo con esa patente\n\n");
                 return;
             }
         }
@@ -46,12 +46,16 @@ public class EmpresaTurismo {
         }
          System.out.println("==========================================================\n");
     }
-//    public Vehiculo buscarPorPatente(String patente) {
-//        for (Vehiculo v : vehiculos) {
-//            if (v.getPatente().equals(patente)){
-//                return v;
-//            }
-//        }
-//    }
+    public void buscarPorPatente(String patente) {
+        for (Vehiculo v : vehiculos) {
+            if (v.getPatente().equals(patente)){
+                System.out.println("\n\nVEHICULO ENCONTRADO");
+                v.mostrarInformacion();
+                System.out.println();
+                return;
+            }
+        }
+        System.out.println("No existe ningun vehiculo registrado con esa patente\n\n");
+    }
             
 }

@@ -22,8 +22,6 @@ public class SistemaGestionTransporteTuristico {
             mostrarMenu();
             System.out.println("\nSeleccione una opcion: ");
             validarEntero();
-            
-            
             int opcion = scanner.nextInt();
             
             switch (opcion) {
@@ -37,6 +35,10 @@ public class SistemaGestionTransporteTuristico {
                     empTurismo.iniciarServicioTuristico();
                     break;
                 case 4:
+                    scanner.nextLine();
+                    System.out.print("\nIngrese la patente del vehiuclo buscado: ");
+                    String patente = validarString("La patente no puede estar vacia");
+                    empTurismo.buscarPorPatente(patente);
                     break;
                 case 5:
                     break;
@@ -77,6 +79,18 @@ public class SistemaGestionTransporteTuristico {
         }
     }
     
+    public static String validarString(String mensajeError) {
+        String ingreso;
+        do {
+            ingreso = scanner.nextLine();
+            if (ingreso.isEmpty()) {
+                System.out.println(mensajeError);
+                System.out.println("Reingrese: ");
+            }
+        } while (ingreso.isEmpty());
+        return ingreso;
+    }
+    
     public static void ingresarDatosVehiculo() {
         System.out.println("\nTIPOS DE VEHICULOS\n");
         System.out.println("1. Colectivo");
@@ -84,11 +98,12 @@ public class SistemaGestionTransporteTuristico {
         System.out.println("3. Lancha");
         System.out.print("Seleccione tipo de vehiculo: ");
         
+        validarEntero();
         int vehiculo = scanner.nextInt();
-        scanner.hasNext();
+        scanner.nextLine();
         
         System.out.print("Ingrese patente: ");
-        String patente = scanner.nextLine();
+        String patente = validarString("La patente no puede estar vacia");
         System.out.print("Ingrese marca del vehiculo: ");
         String marca = scanner.nextLine();
         System.out.print("Ingrese capacidad: ");
