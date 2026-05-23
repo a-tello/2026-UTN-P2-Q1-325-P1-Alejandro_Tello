@@ -47,8 +47,10 @@ public class SistemaGestionTransporteTuristico {
                     empTurismo.mostrarVehiculosConCapacidad(capacidad);
                     break;
                 case 6:
+                    empTurismo.mostrarOrdenadosPor(Vehiculo.POR_ANIO_DESC);
                     break;
                 case 7:
+                    empTurismo.mostrarOrdenadosPor(Vehiculo.POR_CAPACIDAD_DESC);
                     break;
                 case 8:
                     System.out.println("Saliendo del sistema...");

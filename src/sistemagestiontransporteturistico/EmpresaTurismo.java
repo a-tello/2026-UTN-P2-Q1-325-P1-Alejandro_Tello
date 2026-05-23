@@ -1,6 +1,7 @@
 package sistemagestiontransporteturistico;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class EmpresaTurismo {
     private ArrayList<Vehiculo> vehiculos;
@@ -80,6 +81,22 @@ public class EmpresaTurismo {
             System.out.println("No se encontraron vehiculos con capacidad para mas de " + capacidad + " personas\n\n");
         }
         
+    }
+    
+    public void mostrarOrdenadosPor(Comparator criterio) {
+        if (vehiculos.isEmpty()){
+            System.out.println("No hay vehiculos registrados");
+            return;
+        }
+        System.out.println();
+        ArrayList<Vehiculo> copiaVehiculos = new ArrayList<>(vehiculos);
+        copiaVehiculos.sort(criterio);
+        
+        for (Vehiculo v : copiaVehiculos) {
+            v.mostrarInformacion();
+        }
+        
+        System.out.println();
     }
             
 }
