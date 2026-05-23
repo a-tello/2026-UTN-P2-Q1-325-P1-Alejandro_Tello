@@ -37,6 +37,10 @@ public class EmpresaTurismo {
     }
     
     public void iniciarServicioTuristico() {
+        if (vehiculos.isEmpty()){
+            System.out.println("No hay vehiculos registrados");
+            return;
+        }
          for (Vehiculo v : vehiculos) {
              if (v instanceof ServicioTuristico) {
                  ((ServicioTuristico) v).realizarServicio();
@@ -45,7 +49,7 @@ public class EmpresaTurismo {
              }
             
         }
-         System.out.println("==========================================================\n");
+        System.out.println("==========================================================\n");
     }
     public void buscarPorPatente(String patente) {
         if (vehiculos.isEmpty()){
